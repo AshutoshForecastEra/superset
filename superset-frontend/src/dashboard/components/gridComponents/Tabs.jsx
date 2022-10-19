@@ -90,7 +90,7 @@ const StyledTabsContainer = styled.div`
 
   .dashboard-component-tabs-content {
     min-height: ${({ theme }) => theme.gridUnit * 12}px;
-    margin-top: ${({ theme }) => theme.gridUnit / 4}px;
+    margin-top: ${({ theme }) => theme.gridUnit}px;
     position: relative;
   }
 
@@ -103,6 +103,7 @@ const StyledTabsContainer = styled.div`
 
     .ant-tabs-content-holder {
       overflow: visible;
+      background:#eff3f9;
     }
   }
 

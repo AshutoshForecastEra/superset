@@ -281,17 +281,6 @@ class SliceHeaderControls extends React.PureComponent<
         selectable={false}
         data-test={`slice_${slice.slice_id}-menu`}
       >
-        <Menu.Item
-          key={MENU_KEYS.FORCE_REFRESH}
-          disabled={this.props.chartStatus === 'loading'}
-          style={{ height: 'auto', lineHeight: 'initial' }}
-          data-test="refresh-chart-menu-item"
-        >
-          {t('Force refresh')}
-          <RefreshTooltip data-test="dashboard-slice-refresh-tooltip">
-            {refreshTooltip}
-          </RefreshTooltip>
-        </Menu.Item>
 
         <Menu.Item key={MENU_KEYS.FULLSCREEN}>{fullscreenLabel}</Menu.Item>
 

@@ -73,6 +73,7 @@ import { shouldFocusTabs, getRootLevelTabsComponent } from './utils';
 import DashboardContainer from './DashboardContainer';
 import { useNativeFilters } from './state';
 
+
 type DashboardBuilderProps = {};
 
 const StyledDiv = styled.div`
@@ -177,9 +178,6 @@ const StyledDashboardContent = styled.div<{
     width: 0;
     flex: 1;
     position: relative;
-    margin-top: ${({ theme }) => theme.gridUnit * 6}px;
-    margin-right: ${({ theme }) => theme.gridUnit * 8}px;
-    margin-bottom: ${({ theme }) => theme.gridUnit * 6}px;
     margin-left: ${({
       theme,
       dashboardFiltersOpen,
@@ -407,25 +405,7 @@ const DashboardBuilder: FC<DashboardBuilderProps> = () => {
           </StickyPanel>
         </FiltersPanel>
       )}
-      <StyledHeader ref={headerRef}>
-        {/* @ts-ignore */}
-        <DragDroppable
-          data-test="top-level-tabs"
-          component={dashboardRoot}
-          parentComponent={null}
-          depth={DASHBOARD_ROOT_DEPTH}
-          index={0}
-          orientation="column"
-          onDrop={handleDrop}
-          editMode={editMode}
-          // you cannot drop on/displace tabs if they already exist
-          disableDragDrop={!!topLevelTabs}
-          style={draggableStyle}
-        >
-          {renderDraggableContent}
-        </DragDroppable>
-      </StyledHeader>
-      <StyledContent fullSizeChartId={fullSizeChartId}>
+           <StyledContent fullSizeChartId={fullSizeChartId}>
         <Global
           styles={css`
             // @z-index-above-dashboard-header (100) + 1 = 101
